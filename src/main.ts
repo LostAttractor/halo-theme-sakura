@@ -71,14 +71,11 @@ class SakuraDocumentFunctionImpl implements DocumentFunction {
 
   execCount: Number = 0;
 
-  pageData: Map<String, any> = new Map();
-
   constructor(target: any, name: String, method: Function, isRefresh: Boolean) {
     this.target = target;
     this.name = name;
     this.method = method;
     this.isRefresh = isRefresh;
-    this.pageData = Util.jsonToMap<string, any>(pageData);
   }
 
   execute(): void {
@@ -87,7 +84,7 @@ class SakuraDocumentFunctionImpl implements DocumentFunction {
         return;
       }
     }
-    this.method.call(this.target, this.pageData);
+    this.method.call(this.target);
     this.execCount = this.execCount.valueOf() + 1;
   }
 }
@@ -172,10 +169,6 @@ export class SakuraApp implements Sakura {
       return new ThemeConfigImpl();
     }
     return themeConfig;
-  }
-
-  getPageConfig(): Map<String, any> {
-    return this.currPageData;
   }
 
   /**
