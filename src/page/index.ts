@@ -1,7 +1,7 @@
 import { documentFunction } from "../main";
 
 export default class Index {
-  @documentFunction(false)
+  @documentFunction()
   public registerIndex() {
     console.log("123");
   }
