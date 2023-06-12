@@ -53,7 +53,6 @@ export default class Index {
       backgorundElement.setAttribute("data-currIndex", `${backageImageIndex}`);
     };
   }
-  
   /**
    * 注册背景视频功能
    */
