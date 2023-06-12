@@ -28,6 +28,7 @@
     float: left;
     overflow: hidden;
     height: 100%;
+    padding: 55px 25px;
     text-align: center;
 
     &:hover {
@@ -94,6 +95,7 @@
     & article,
     & a {
       height: 150px;
+      padding: 55px 40px;
       text-align: left;
     }
 

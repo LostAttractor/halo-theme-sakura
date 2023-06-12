@@ -44,13 +44,10 @@
         <th:block th:replace="module/comments" />
 
         <!--/* 定义可变属性，会根据页面的改变而变化 */-->
-        <script type="text/javascript" th:inline="javascript">
+        <script type="text/javascript">
+          /* <![CDATA[ */
           // TODO:
-          var PageAttr = {
-            [# th:if="${_templateId == 'post'}"]
-            "postEditTime": "[(${#dates.format(post.status.lastModifyTime, 'yyyy-MM-dd HH:mm:ss')})]"
-            [/]
-          };
+          var PageAttr = {};
           // var PageAttr = {
           //     "metas": {
           //         // <#if metas??>
@@ -65,6 +62,7 @@
           //     "postEditTime": "${post.editTime?string('yyyy-MM-dd HH:mm:ss')}"
           //     </#if>
           // }
+          /* ]]> */
         </script>
       </main>
     </section>
