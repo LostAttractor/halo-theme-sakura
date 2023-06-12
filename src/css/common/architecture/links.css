@@ -10,7 +10,7 @@ a {
   &:active,
   &:hover {
     outline: none;
-    color: var(--theme-color);
+    color: orange;
   }
 
   &:active {

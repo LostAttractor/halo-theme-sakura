@@ -285,7 +285,7 @@ export class SakuraApp implements Sakura {
               },
             ],
           },
-          debug: import.meta.env.MODE === "development" ? true : false,
+          debug: import.meta.env.MODE === 'development' ? true : false,
           lowerCaseLng: true,
           cleanCode: true,
           interpolation: {
@@ -335,6 +335,8 @@ export class SakuraApp implements Sakura {
     } else {
       sakura.$localize("[data-i18n]");
     }
+
+    // TODO 注册事件，提供 sakura 实例方便其他位置进行原型扩展
   }
 
   /**
@@ -404,7 +406,7 @@ export class SakuraApp implements Sakura {
     if (!_templateId) {
       return;
     }
-    // 也可以通过 `./page/index` 这类具体名称处理，优点是不需要加上 min.js，缺点是需要特殊处理
+    // TODO 也可以通过 `./page/index` 这类具体名称处理，优点是不需要加上 min.js，缺点是需要特殊处理
     const modulePath = `./page/${_templateId}.min.js`;
     await import(modulePath);
   }
@@ -412,11 +414,8 @@ export class SakuraApp implements Sakura {
   protected initEventMulticaster(): void {
     let refreshEvent = this.events.get(this.REFRESH_EVENT_NAME);
     if (!refreshEvent) {
-      refreshEvent = new CustomEvent(this.REFRESH_EVENT_NAME.toString(), {
-        detail: {
-          pageData: this.currPageData,
-        },
-      });
+      //TODO 将每页的可变属性传递给事件
+      refreshEvent = new CustomEvent(this.REFRESH_EVENT_NAME.toString());
       this.events.set(this.REFRESH_EVENT_NAME, refreshEvent);
     }
   }

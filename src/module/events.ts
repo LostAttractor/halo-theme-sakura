@@ -11,7 +11,8 @@ export class Events {
    */
   @documentFunction(false)
   public registerScrollEvent() {
-    const offset = (document.querySelector(".site-header") as HTMLElement)?.offsetHeight || 75;
+    // TODO 导航栏高度，可统一处理
+    const offset = 75;
     const backToTopElement = document.querySelector(".cd-top") as HTMLElement;
     const mobileBackToTopElement = document.querySelector(".m-cd-top") as HTMLElement;
     const changeSkinElement = document.querySelector(".change-skin-gear") as HTMLDivElement;
@@ -87,6 +88,7 @@ export class Events {
   public registerCodeBlockZoomEvent() {
     const preElements = document.querySelectorAll("pre") as NodeListOf<HTMLElement>;
     preElements.forEach((preElement) => {
+      // TODO 需保证每个元素只注册一次事件，等待 pjax 功能完成后验证
       preElement.addEventListener("dblclick", (event) => {
         if (event.target !== preElement) {
           return;
