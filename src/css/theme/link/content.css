@@ -26,7 +26,7 @@
       grid-template-columns: repeat(3, 1fr);
 
       & .link-item {
-        border: 1px solid #eee;
+        border: 1px solid #ececec;
         padding: 10px 30px;
         margin: 4px;
         position: relative;
@@ -133,7 +133,7 @@
             }
 
             & .linkdes {
-              color: #999;
+              color: #949494;
               border-top: 1px dashed #ddd;
             }
           }

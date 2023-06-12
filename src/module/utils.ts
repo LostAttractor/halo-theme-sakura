@@ -2,7 +2,7 @@ import { documentFunction, sakura } from "../main";
 import "APlayer/dist/APlayer.min.css";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 // @ts-ignore
-import commentStyle from "../css/injection/comment.css?inline";
+import commentStyle from "../css/injection/comment.css";
 
 export class Utils {
   /**

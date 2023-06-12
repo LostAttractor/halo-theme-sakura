@@ -14,9 +14,9 @@ input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
   border: 1px solid;
-  border-color: #ccc #ccc #b0b0b0;
+  border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #ddd;
+  background: #e6e6e6;
   box-shadow: none;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
@@ -26,13 +26,13 @@ input[type="submit"] {
   -webkit-appearance: button;
 
   &:hover {
-    border-color: #ccc #b0b0b0 #b0b0b0;
+    border-color: #ccc #bbb #aaa;
     box-shadow: none;
   }
 
   &:focus,
   &:active {
-    border-color: #b0b0b0 #b0b0b0 #b0b0b0;
+    border-color: #aaa #bbb #bbb;
     box-shadow: none;
   }
 }
@@ -83,6 +83,6 @@ input[type="color"] {
   padding: 3px;
 
   &:focus {
-    color: #000000;
+    color: #111;
   }
 }

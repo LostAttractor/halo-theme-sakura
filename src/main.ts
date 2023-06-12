@@ -264,8 +264,6 @@ export class SakuraApp implements Sakura {
                 read<Namespace>(
                   // @ts-ignore
                   language: LocaleCode,
-                  // @ts-ignore
-                  namespace: Namespace,
                   callback: (errorValue: unknown, translations: null | [Namespace]) => void
                 ) {
                   import(`./languages/${language}.json`)
@@ -286,6 +284,7 @@ export class SakuraApp implements Sakura {
               },
             ],
           },
+          // @ts-ignore
           debug: import.meta.env.MODE === "development" ? true : false,
           lowerCaseLng: true,
           cleanCode: true,
