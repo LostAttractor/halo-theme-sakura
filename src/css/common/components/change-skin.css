@@ -5,8 +5,8 @@
   right: 5px;
   width: auto;
   height: auto;
-  z-index: 9;
-  visibility: visible;
+  z-index: 99;
+  visibility: hidden;
   white-space: nowrap;
   padding: 10px;
   cursor: pointer;
@@ -143,10 +143,6 @@
       &:hover {
         background-color: #fc3;
         color: var(--theme-color);
-
-        & svg {
-          color: #f5f5f5;
-        }
       }
     }
   }
