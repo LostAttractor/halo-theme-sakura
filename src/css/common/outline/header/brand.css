@@ -25,10 +25,8 @@
     & a,
     & img {
       height: 40px;
-      width: 40px;
       margin-top: 17px;
       opacity: 0.75;
-      object-fit: cover;
       transition: color 0.2s ease-out, border 0.2s ease-out, opacity 0.2s ease-out;
     }
   }
@@ -43,9 +41,8 @@
       margin-right: 10px;
 
       & img {
-        height: 30px;
-        width: 30px;
-        border-radius: 100%;
+        height: 40px;
+        line-height: 40px;
         margin: 0;
         vertical-align: middle;
       }
