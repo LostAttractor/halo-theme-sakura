@@ -67,10 +67,10 @@ class SakuraDocumentFunctionImpl implements DocumentFunction {
 
   execCount: Number = 0;
 
-  constructor(name: String, method: Function, isRefresh: Boolean) {
+  constructor(name: String, method: Function, isRefresh?: Boolean) {
     this.name = name;
     this.method = method;
-    this.isRefresh = isRefresh;
+    this.isRefresh = isRefresh || true;
   }
 
   execute(): void {
@@ -201,7 +201,7 @@ export class SakuraApp implements Sakura {
   public registerDocumentFunction(documentFunction: DocumentFunction): void {
     this.obtainFunctionFactory();
     this.documentFunctionFactory.registerDocumentFunction(documentFunction);
-    documentFunction.execute();
+    this.finishDocumentFunction();
   }
 
   protected finishDocumentFunction(): void {

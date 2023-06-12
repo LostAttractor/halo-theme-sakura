@@ -32,7 +32,7 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: false,
+    sourcemap: true,
   },
   resolve: {
     alias: {

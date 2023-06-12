@@ -1,38 +1,27 @@
 import { documentFunction } from "../main";
 import cloneDeep from "lodash.clonedeep";
+import * as d3 from "d3";
 import cloud from "d3-cloud";
-import { generateColor } from "../utils/util";
 declare const wordClouds: object[];
 
 export default class Tags {
   @documentFunction(false)
-  public registerTags() {
-    const tagChips = document.querySelectorAll(".tags-container .chip") as NodeListOf<HTMLElement>;
-    tagChips.forEach((tagChip) => {
-      if (!tagChip.style.backgroundColor) {
-        tagChip.style.backgroundColor = generateColor();
-      }
-    });
-  }
-
-  @documentFunction(false)
-  public async registerTagsWordCloud() {
+  public registerTagsWordCloud() {
     const wordCloudElement = document.getElementById("tag-wordcloud");
     if (!wordCloudElement) {
       return;
     }
-    const d3 = await import("d3");
     const cloneWords = cloneDeep(wordClouds);
+    console.log(wordClouds)
     var layout = cloud()
       .size([wordCloudElement.offsetWidth, wordCloudElement.offsetHeight])
       .words(cloneWords)
       .rotate(() => {
-        return Math.random() * 60 - 30;
+        return (Math.random() * 60) - 30;
       })
-      .fontSize(function (d: any) {
-        return 100 - (1 / (d.size + 1)) * 120;
+      .fontSize(function (d) {
+        return (d.size + 1) * 10
       })
-      .padding(5)
       .on("end", (words: object[]) => {
         d3.select("#tag-wordcloud")
           .append("svg")
@@ -44,24 +33,19 @@ export default class Tags {
           .data(words)
           .enter()
           .append("svg:a")
-          .attr("xlink:href", function (d: any) {
+          .attr("xlink:href", function (d) {
             return d.link;
           })
           .append("text")
-          .style("font-size", function (d: any) {
+          .style("font-size", function (d) {
             return d.size;
           })
-          .style("font-family", "Impact")
-          .style("cursor", "pointer")
-          .style("font-weight", 500)
-          .style("fill", (d: any) => {
-            return d.color || generateColor();
-          })
+          .style("fill", "black")
           .attr("text-anchor", "middle")
-          .attr("transform", function (d: any) {
+          .attr("transform", function (d) {
             return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
           })
-          .text(function (d: any) {
+          .text(function (d) {
             return d.text;
           });
       });
