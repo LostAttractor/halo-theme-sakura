@@ -33,7 +33,7 @@
       align-items: center;
 
       & .archive-time {
-        & svg {
+        & i {
           padding: 10px;
           border-radius: 100px;
           background: orange;
@@ -103,7 +103,7 @@
             float: right;
             color: #cacaca;
 
-            & svg {
+            & i {
               margin: 3px;
             }
           }

@@ -21,9 +21,7 @@
             <th:block th:each="month,monthStat : ${archive.months}">
               <div class="archive-item" th:id="'arti-'+${archive.year}+'-'+${month.month}">
                 <div class="archive-title">
-                  <span class="archive-time">
-                    <span class="iconify" data-icon="ph:read-cv-logo-bold"></span>
-                  </span>
+                  <span class="archive-time"><i class="iconfont icon-log"></i></span>
                   <h3 th:text="${archive.year}+'-'+${month.month}"></h3>
                 </div>
                 <div
@@ -37,7 +35,7 @@
                     <div class="brick">
                       <a th:href="@{${post.status.permalink}}">
                         <span class="time">
-                          <span class="iconify iconify--large" data-icon="ic:round-access-time"></span>
+                          <i class="iconfont icon-time"> </i>
                           <th:block th:text="${#dates.format(post.spec.publishTime,'MM-dd')}"></th:block>
                         </span>
                         <th:block th:text="${post.spec.title}"></th:block>

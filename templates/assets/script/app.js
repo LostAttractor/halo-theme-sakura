@@ -365,13 +365,11 @@ var LIlGGAttachContext = {
         id: "hljs-" + i,
       });
 
-      let copyCode = 
-      `
-      <a class="copy-code" href="javascript:" data-clipboard-target="#hljs-${i}" title="拷贝代码">
-        <span class="iconify" data-icon="fa:clipboard"></span>
-      </a>
-      `;
-      $(this).after(copyCode);
+      $(this).after(
+        '<a class="copy-code" href="javascript:" data-clipboard-target="#hljs-' +
+          i +
+          '" title="拷贝代码"><i class="fa fa-clipboard" aria-hidden="true"></i></a>'
+      );
       new ClipboardJS(".copy-code");
     });
   },
@@ -683,8 +681,8 @@ var LIlGGAttachContext = {
         let that = $(this);
         // 为日志设置时间图标
         var $firstSpan = that.find(".journal-time>span").first();
-        if ($firstSpan.find("span").length == 0) {
-          $firstSpan.prepend(`<span class="iconify" data-icon="${getTimeIcon($firstSpan.text())}"></span> `);
+        if ($firstSpan.find("i").length == 0) {
+          $firstSpan.prepend('<i class="iconfont icon-' + getTimeIcon($firstSpan.text()) + '"></i> ');
         }
 
         // 为所有图片增加box
@@ -897,8 +895,8 @@ var LIlGGAttachContext = {
 
     var minicode = contentDom.getElementsByClassName("minicode");
     Array.prototype.forEach.call(minicode, (content) => {
-      var hideMiniCode = content.getElementsByClassName("hide-minicode")[0];
-      hideMiniCode.onclick = function () {
+      var i = content.getElementsByTagName("i")[0];
+      i.onclick = function () {
         content.classList.toggle("hide");
       };
     });
@@ -908,9 +906,7 @@ var LIlGGAttachContext = {
                 <span class="content-toast">
                   ${msg}
                 </span>
-                <div class="hide-minicode">
-                  <span class="iconify iconify--small" data-icon="fa:times"></span>
-                </div>
+                <i class="fa fa-times" aria-hidden="true"></i>
               </div>`;
     }
 
@@ -936,9 +932,9 @@ var imgError = function (ele) {
  * @param {*} time
  */
 var getTimeIcon = function (time) {
-  var ICON_DAY = "solar:sun-outline",
-    ICON_MORN = "solar:sun-fog-broken",
-    ICON_NIGHT = "solar:moon-fog-broken";
+  var ICON_DAY = "kaiqitaiyangguangshezhi",
+    ICON_MORN = "gengzaotubiao_tianqi-qingchen",
+    ICON_NIGHT = "yueliang";
   var date = new Date(time);
   var hours = date.getHours();
   if (isNaN(hours)) {

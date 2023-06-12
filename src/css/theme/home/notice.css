@@ -14,8 +14,8 @@
     vertical-align: middle;
   }
 
-  & .iconify {
-    top: 0;
+  & i {
+    float: left;
     color: #999;
     font-size: 18px;
     padding-right: 10px;

@@ -58,6 +58,7 @@
   & .show-share {
     cursor: pointer;
     opacity: 0.6;
+    float: right;
     transition: opacity 0.1s ease-out;
   }
 
