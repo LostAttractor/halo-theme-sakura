@@ -612,16 +612,15 @@ var LIlGGAttachContext = {
       return;
     }
     // 渲染图库信息
-    var $gallerys = $(".photos-content .gallery");
+    var $masonrys = $(".photos-content .gallery");
 
     var justify = function () {
       // http://miromannino.github.io/Justified-Gallery/options-and-events/
-      $gallerys.justifiedGallery({
+      var option = {
         margins: isNaN(Poi.photosGutter) ? 10 : Number(Poi.photosGutter),
         rowHeight: 200,
-        captions: false,
-      });
-      
+        captions: false
+      };
       // 默认过滤
       if (Poi.defaultGroup) {
         var filter = "." + Poi.defaultGroup;
@@ -632,7 +631,10 @@ var LIlGGAttachContext = {
             return false;
           }
         });
+        option.filter = filter;
       }
+
+      $masonrys.justifiedGallery(option);
 
       // 过滤
       $("#gallery-filter li a").on("click", function () {
@@ -643,26 +645,35 @@ var LIlGGAttachContext = {
         $("#gallery-filter li a").removeClass("active");
         $(this).addClass("active");
         var dataFilter = $(this).data("filter");
-        $gallerys.justifiedGallery({
+        $masonrys.justifiedGallery({
           filter: dataFilter,
         });
         return false;
       });
 
-      $gallerys.justifiedGallery().on("jg.complete", function (e) {
+      $masonrys.justifiedGallery().on('jg.complete', function (e) {
         $photoPage.find(".photos-content").removeClass("loading");
       });
     };
 
     var masonry = function () {
-      $gallerys.isotope({
-        masonry: {
-          gutter: 10,
-        },
-        percentPosition: true,
-        itemSelector: ".gallery-item",
-      });
-
+      var option =
+        Poi.photosStyle == "masonry"
+          ? {
+              masonry: {
+                gutter:  10,
+              },
+              percentPosition: true,
+              itemSelector: ".gallery-item",
+            }
+          : {
+              layoutMode: "packery",
+              packery: {
+                columnWidth: 100,
+                gutter:  10,
+              },
+              itemSelector: ".gallery-item",
+            };
       // 默认过滤
       if (Poi.defaultGroup) {
         var filter = "." + Poi.defaultGroup;
@@ -671,28 +682,27 @@ var LIlGGAttachContext = {
           if ($(this).data("filter") == filter) {
             $(this).addClass("active");
             var dataFilter = $(this).data("filter");
-            $gallerys.isotope({
+            $masonrys.isotope({
               filter: dataFilter,
             });
             return false;
           }
         });
+        option.filter = filter;
       }
 
-      $gallerys.find("img.lazyload").on("load", function () {
-        $gallerys.isotope("layout");
-        $photoPage.find(".photos-content").removeClass("loading");
+      $masonrys.find("img.lazyload").on("load", function () {
+        $(this).parents(".gallery-item").css("background", "#222");
+        delete option.filter;
+        $masonrys.isotope(option);
       });
-      
+
       // 过滤
       $("#gallery-filter li a").on("click", function () {
-        if ($(this).hasClass("active")) {
-          return false;
-        }
         $("#gallery-filter li a").removeClass("active");
         $(this).addClass("active");
         var dataFilter = $(this).data("filter");
-        $gallerys.isotope({
+        $masonrys.isotope({
           filter: dataFilter,
         });
         return false;
@@ -704,16 +714,16 @@ var LIlGGAttachContext = {
           $("#grid-changer a").removeClass("active");
           $(this).toggleClass("active");
           for (var i = 2; i < 9; i++) {
-            $gallerys.find(".gallery-item").removeClass("col-" + i);
+            $masonrys.find(".gallery-item").removeClass("col-" + i);
           }
-          $gallerys.find(".gallery-item").toggleClass($(this).closest("li").attr("class"));
-          $gallerys.isotope("layout");
+          $masonrys.find(".gallery-item").toggleClass($(this).closest("li").attr("class"));
+          $masonrys.isotope(option);
         });
       }
     };
 
-    if ($gallerys.length > 0) {
-      if (Poi.photosStyle == "masonry") {
+    if ($masonrys.length > 0) {
+      if (Poi.photosStyle == "masonry" || Poi.photosStyle == "packery") {
         masonry();
       } else {
         justify();
@@ -1468,6 +1478,42 @@ function headertop_down() {
 function imgError() {
   return (this.src = "/assets/images/temp.jpg");
 }
+
+var supplement = function () {
+  var PackeryMode = Isotope.LayoutMode.modes.packery;
+  var __resetLayout = PackeryMode.prototype._resetLayout;
+  PackeryMode.prototype._resetLayout = function () {
+    __resetLayout.call(this);
+    // 重置packer
+    var parentSize = getSize(this.element.parentNode);
+    var colW = this.columnWidth + this.gutter;
+    this.fitWidth = Math.floor((parentSize.innerWidth + this.gutter) / colW) * colW;
+    this.packer.width = this.fitWidth;
+    this.packer.height = Number.POSITIVE_INFINITY;
+    this.packer.reset();
+  };
+
+  PackeryMode.prototype._getContainerSize = function () {
+    // 删除空白
+    var emptyWidth = 0;
+    for (var i = 0, len = this.packer.spaces.length; i < len; i++) {
+      var space = this.packer.spaces[i];
+      if (space.y === 0 && space.height === Number.POSITIVE_INFINITY) {
+        emptyWidth += space.width;
+      }
+    }
+
+    return {
+      width: this.fitWidth - this.gutter,
+      height: this.maxY - this.gutter,
+    };
+  };
+
+  // 始终调整大小
+  PackeryMode.prototype.needsResizeLayout = function () {
+    return true;
+  };
+};
 
 /*
  * File skip-link-focus-fix.js.
