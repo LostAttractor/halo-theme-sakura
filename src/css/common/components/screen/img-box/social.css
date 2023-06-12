@@ -1,14 +1,14 @@
 .top-social {
-  height: 23px;
+  height: 32px;
   margin-bottom: -15px;
   margin-left: 10px;
   list-style: none;
   display: inline-block;
 
   & img {
-    height: 23px;
-    width: 23px;
-    padding: 0;
+    height: 35px;
+    width: 35px;
+    padding: 6px;
     background: 0 0;
   }
 
@@ -23,8 +23,8 @@
   }
 
   & .wechat {
-    width: 23px;
-    height: 23px;
+    width: 35px;
+    height: 35px;
     position: relative;
 
     & .wechatInner {
