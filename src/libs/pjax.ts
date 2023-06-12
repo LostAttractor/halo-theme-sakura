@@ -22,6 +22,7 @@
 import Pjax from 'pjax';
 import { sakura } from "../main";
 import NProgress from 'nprogress';
+/** TODO pjax 之后，404 页面无法跳转 */
 
 new Pjax({
   elements: 'a[data-pjax]',
@@ -45,13 +46,6 @@ window.addEventListener('pjax:send', () => {
 window.addEventListener('pjax:complete', () => {
   NProgress.done();
 });
-
-window.addEventListener('pjax:error', (event: any) => {
-  const request = event.request as XMLHttpRequest;
-  if (request.status === 404 || request.status === 500) {
-    window.location.href = request.responseURL;
-  }
-})
 
 window.addEventListener('pjax:success', () => {
   // 第二种脚本处理。对添加了 id=pjax 或者 data-pjax 的 script，重新添加到文档树
