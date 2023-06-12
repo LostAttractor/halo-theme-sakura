@@ -1,13 +1,13 @@
 .top-social {
-  display: flex;
-  justify-content: center;
-  height: 26px;
-  margin-top: 15px;
+  height: 23px;
+  margin-bottom: -15px;
+  margin-left: 10px;
   list-style: none;
+  display: inline-block;
 
   & img {
-    height: 26px;
-    width: 26px;
+    height: 23px;
+    width: 23px;
     padding: 0;
     background: 0 0;
   }

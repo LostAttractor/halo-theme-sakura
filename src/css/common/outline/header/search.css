@@ -3,7 +3,8 @@
   height: 75px;
   line-height: 75px;
   margin-left: 20px;
-  animation: fadeInRight 1s;
+  -webkit-animation: searchbox 1s;
+  animation: searchbox 1s;
 
   & i.iconfont.js-toggle-search.iconsearch {
     color: #666;

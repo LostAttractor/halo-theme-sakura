@@ -12,10 +12,6 @@
   cursor: pointer;
   border-radius: 10px 10px 0 0;
 
-  & i {
-    display: inline-block;
-  }
-
   @mixin screens-md {
     display: none !important;
 
@@ -33,18 +29,8 @@
   animation: rotating 3s linear infinite;
 }
 
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* 移动端按钮 */
-.mobile-change-skin {
+.m-change-skin {
   display: none;
   position: fixed;
   bottom: 15px;
@@ -72,10 +58,6 @@
     opacity: 1;
   }
 
-  & i {
-    display: inline-block;
-  }
-
   @mixin screens-md {
     display: block;
   }
@@ -90,7 +72,7 @@
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.5);
-  z-index: 9;
+  z-index: 99;
   font-family: "Ubuntu", sans-serif;
   transform: scaleX(0);
   transition: 0.5s;
