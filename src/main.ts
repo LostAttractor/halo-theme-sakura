@@ -252,7 +252,7 @@ export class SakuraApp implements Sakura {
     }
 
     // 挂载 i18n
-    if (!Object.getOwnPropertyDescriptor(sakura, "$t")) {
+    if (!Object.getOwnPropertyDescriptor(sakura, "$i18n")) {
       i18next
         .use(LanguageDetector)
         .use(Backend)
