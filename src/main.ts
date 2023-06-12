@@ -1,7 +1,7 @@
-import { jsonToMap } from "./utils/util";
-import "./module/index";
+import "@/module/index";
 import "@/css/main.css";
 import "@purge-icons/generated";
+import "reflect-metadata";
 
 /* 核心启动，通常不建议也不应当由用户调用，只能由启动代码使用  */
 interface Sakura {
@@ -99,8 +99,6 @@ export class SakuraApp implements Sakura {
 
   private themeconfigs: Map<String, ThemeConfig>;
 
-  private currPageData: Map<String, any>  = new Map();
-
   private startupDate: Date = new Date();
 
   private documentFunctionFactory: DocumentFunctionFactory = new SakuraDocumentFunctionFactory();
@@ -112,26 +110,6 @@ export class SakuraApp implements Sakura {
   constructor(config?: String) {
     this.config = config;
     this.themeconfigs = new Map();
-    this.refreshThemeConfig();
-  }
-
-  private refreshThemeConfig() {
-    if (!this.config) {
-      return;
-    }
-    let groupMap = JSON.parse(this.config.toString());
-    Object.keys(groupMap).forEach((key) => {
-      let themeConfig = new ThemeConfigImpl(groupMap[key]);
-      this.themeconfigs.set(key, themeConfig);
-    });
-  }
-
-  getThemeConfig(group: String): ThemeConfig {
-    let themeConfig = this.themeconfigs.get(group);
-    if (!themeConfig) {
-      return new ThemeConfigImpl();
-    }
-    return themeConfig;
   }
 
   /**
@@ -196,8 +174,30 @@ export class SakuraApp implements Sakura {
     return this.documentFunctionFactory;
   }
 
+  private refreshThemeConfig() {
+    if (!this.config) {
+      return;
+    }
+    let groupMap = JSON.parse(this.config.toString());
+    Object.keys(groupMap).forEach((key) => {
+      let themeConfig = new ThemeConfigImpl(groupMap[key]);
+      this.themeconfigs.set(key, themeConfig);
+    });
+  }
+
+  getThemeConfig(group: String): ThemeConfig {
+    let themeConfig = this.themeconfigs.get(group);
+    if (!themeConfig) {
+      return new ThemeConfigImpl();
+    }
+    return themeConfig;
+  }
+
   protected prepareRefresh(): void {
     this.startupDate = new Date();
+    // 刷新全局配置
+    this.refreshThemeConfig();
+    //TODO: 刷新每一页可变属性
     this.refreshMetadata();
 
     if (this.getThemeConfig("advanced").getValue("log", Boolean)) {
@@ -205,22 +205,10 @@ export class SakuraApp implements Sakura {
     }
   }
 
-  protected refreshMetadata() {
-    try {
-      this.currPageData = jsonToMap<string, any>(pageData);
-    } catch (error) {
-      console.error("解析 pageData 失败：", error);
-    }
-  }
+  protected refreshMetadata() {}
 
-  protected async registerRoute() {
-    const _templateId = this.currPageData.get("_templateId");
-    if (!_templateId) {
-      return;
-    }
-    // TODO 也可以通过 `./page/index` 这类具体名称处理，优点是不需要加上 min.js，缺点是需要特殊处理
-    const modulePath = `./page/${_templateId}.min.js`;
-    await import(modulePath);
+  protected registerRoute() {
+    import("./page/index");
   }
 
   protected initEventMulticaster(): void {
@@ -243,10 +231,7 @@ export class SakuraApp implements Sakura {
 
 // 全局配置文件变量，由主题提供
 declare const config: any;
-// 当前可变属性变量，由主题提供
-declare const pageData: any;
-
-export var sakura: Sakura = new SakuraApp(config);;
+export var sakura: Sakura = new SakuraApp();
 
 document.addEventListener("DOMContentLoaded", () => {
   sakura.refresh();
