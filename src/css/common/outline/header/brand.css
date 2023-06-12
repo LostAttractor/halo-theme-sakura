@@ -33,8 +33,9 @@
 
   @mixin screens-md {
     float: right;
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 43px;
+    margin-right: -6px;
 
     & .site-title {
       font-size: 20px;

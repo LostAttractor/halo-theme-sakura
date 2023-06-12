@@ -36,16 +36,6 @@
       }
     }
   }
-
-  @mixin screens-md {
-    & .site-header {
-      &:hover {
-        & .header-inner {
-          background: transparent;
-        }
-      }
-    }
-  }
 }
 
 /* 非首页时 */
