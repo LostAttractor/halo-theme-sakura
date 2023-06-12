@@ -285,7 +285,7 @@ export class SakuraApp implements Sakura {
               },
             ],
           },
-          debug: import.meta.env.MODE === 'development' ? true : false,
+          debug: true,
           lowerCaseLng: true,
           cleanCode: true,
           interpolation: {
