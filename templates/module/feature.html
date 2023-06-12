@@ -12,11 +12,14 @@
     <span th:if="${#strings.isEmpty(theme.config.focus.feature_title)}" data-i18n="home.feature.title"></span>
   </h1>
 
+  <!--/* TODO: 聚焦图只有一个的时候，样式问题 */-->
   <div class="top-feature-inner">
-    <div class="top-feature-item" th:each="feature : ${theme.config.focus.features}">
-      <div class="feature-container">
+    <div class="top-feature-v2" th:each="feature : ${theme.config.focus.features}">
+      <div class="the-feature square from_left_and_right">
         <a data-pjax th:href="${feature.link}" target="_blank">
-          <img th:src="${feature.image}" />
+          <div class="img">
+            <img th:src="${feature.image}" />
+          </div>
           <div class="info">
             <h3>
               <span th:text="${feature.title}"></span>

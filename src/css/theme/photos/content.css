@@ -38,13 +38,13 @@
 
       & a {
         display: block;
-        color: var(--color);
+        color: #222;
         position: relative;
 
         &::after {
           content: "";
           display: block;
-          border-bottom: 2px solid var(--theme-color);
+          border-bottom: 2px solid #ea8e00;
           width: 0;
           position: absolute;
           bottom: 0;

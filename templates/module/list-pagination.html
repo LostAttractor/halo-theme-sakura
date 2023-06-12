@@ -8,10 +8,10 @@
   </th:block>
   <th:block th:unless="${theme.config.general.pagenav_style == 'ajax'}">
     <nav class="list-navigator">
-      <a data-pjax th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">
+      <a th:if="${posts.hasPrevious()}" th:href="@{${posts.prevUrl}}">
         <span class="iconify" data-icon="fa:chevron-left"></span>
       </a>
-      <a data-pjax th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">
+      <a th:if="${posts.hasNext()}" th:href="@{${posts.nextUrl}}">
         <span class="iconify" data-icon="fa:chevron-right"></span>
       </a>
     </nav>
