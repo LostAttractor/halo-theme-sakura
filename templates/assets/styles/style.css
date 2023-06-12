@@ -8648,7 +8648,7 @@ img[src*="#in-center"] {
 /**
 * 图库
 */
-.photos-container {
+.photo-page {
 	padding: 4em 4.5% 0;
 }
 
@@ -8658,7 +8658,7 @@ img[src*="#in-center"] {
 }
 
 @media screen and (max-width: 860px) {
-	.photos-container {
+	.photo-page {
 		padding-top: 2em;
 	}
 }
