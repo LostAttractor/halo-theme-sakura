@@ -15,9 +15,12 @@
   
   <th:block th:fragment="content">
     <div id="primary" class="content-area">
-      <th:block th:replace="~{macro/content-page :: content-page(${singlePage})}" />
+      <main id="main" class="site-main" role="main">
+        <th:block th:replace="~{macro/content-page :: content-page(${singlePage})}" />
+      </main>
+      <!--/* #main */-->
     </div>
-    
+    <!--/* #primary */-->
     <halo:comment group="content.halo.run" kind="SinglePage" th:attr="name=${singlePage.metadata.name}" />
   </th:block>
 </html>

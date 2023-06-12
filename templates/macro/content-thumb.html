@@ -5,7 +5,7 @@
   <article
     th:each="post, postStat : ${postItems}"
     class="post post-list-thumb"
-    th:classappend="${postStat.odd ? '' : 'post-list-thumb-right'}"
+    th:classappend="${postStat.odd ? '' : 'post-list-thumb-left'}"
     itemscope
     itemtype="http://schema.org/Article"
   >

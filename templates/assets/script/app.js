@@ -1200,10 +1200,10 @@ var home = location.href,
     // 点击事件
     CE: function () {
       // 归档页
-      $(".archive-item .archive-posts").hide();
-      $(".archive-item .archive-posts:first").show();
+      $(".archives").hide();
+      $(".archives:first").show();
       $("#archives-temp h3").click(function () {
-        $(this).parent().next().slideToggle("fast");
+        $(this).next().slideToggle("fast");
         return false;
       });
 
