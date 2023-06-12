@@ -37,7 +37,7 @@
 
   & .herder-user-name {
     font-size: 12px;
-    background: var(--background-color);
+    background: #fff;
     padding: 10px;
     border-radius: 4px 4px 0 0;
 
@@ -64,7 +64,7 @@
 
   & .user-menu-option {
     padding: 5px 0;
-    background: var(--background-color);
+    background: #fff;
     border-radius: 0 0 4px 4px;
     width: 130px;
 

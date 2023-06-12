@@ -13,7 +13,6 @@
     right: 0;
     z-index: 1;
     background-attachment: fixed;
-    background: var(--first-screen-filter-images);
   }
 
   &::after {
@@ -21,7 +20,7 @@
     display: var(--first-screen-after);
     width: 150%;
     height: 4.375rem;
-    background: var(--background-color);
+    background: #fff;
     left: -25%;
     bottom: -2.875rem;
     border-radius: 100%;

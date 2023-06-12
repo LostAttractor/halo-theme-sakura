@@ -4,7 +4,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: var(--background-color);
+  background-color: #fff;
   overflow: hidden;
   z-index: 9;
   pointer-events: none;
@@ -13,7 +13,7 @@
   &::after,
   &::before {
     transition: left .5s;
-    background: var(--background-color);
+    background: #fff;
     position: fixed;
     content: "";
     width: 30px;

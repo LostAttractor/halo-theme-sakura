@@ -24,13 +24,13 @@ html {
 body,
 select,
 textarea {
-  color: var(--body-color);
+  color: #404040;
   font-size: 15px;
   line-height: 1.5;
 }
 
 body {
-  background: var(--background-color);
+  background: #fff;
   background-attachment: fixed;
   margin: 0;
   cursor: var(--cursor-normal);
@@ -155,7 +155,6 @@ textarea {
 
 select {
   text-transform: none;
-  border: 1px solid #ccc;
 }
 
 fieldset {
@@ -318,13 +317,17 @@ img {
 textarea {
   padding-left: 3px;
   width: 100%;
-  color: var(--color);
+  color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
 
   &:focus {
     color: #111;
   }
+}
+
+select {
+  border: 1px solid #ccc;
 }
 
 embed,

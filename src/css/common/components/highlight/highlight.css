@@ -82,7 +82,7 @@
       &,
       & span {
         &::selection {
-          background: var(--background-color);
+          background: #fff;
           color: #21252b;
         }
       }

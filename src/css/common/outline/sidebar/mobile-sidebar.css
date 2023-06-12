@@ -115,7 +115,7 @@
 
   & .footer {
     height: 50px;
-    background: var(--background-color);
+    background: #fff;
     width: 100%;
     display: flex;
     align-items: center;
