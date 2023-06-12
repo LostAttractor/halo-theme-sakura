@@ -4,6 +4,7 @@
 * 插件参见 postcss.config.js.
 * 使用 vite 自带的 postcss-import 功能。https://github.com/postcss/postcss-import。
 */
+@import "index.css";
 
 /* mixins */
 @import "mixins.css";
@@ -16,5 +17,3 @@
 
 /* 主题样式 */
 @import "theme";
-
-@import "index.css";
