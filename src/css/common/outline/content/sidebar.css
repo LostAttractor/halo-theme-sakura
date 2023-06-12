@@ -39,7 +39,7 @@
 
         & a {
           &.toc-link {
-            color: var(--entry-content-list-color);
+            color: #ccc;
             height: 100%;
 
             &::before {

@@ -21,18 +21,17 @@
 
   & .is-decorate {
     & .pattern-title {
-      bottom: 2em;
+      bottom: 60px;
 
       & h1 {
-        text-align: left;
+        text-align: inherit;
       }
     }
 
     & .post-meta {
       & .meta-container {
         justify-content: inherit;
-        padding: 0;
-
+        
         & .post-meta-item {
           & *,
           &::after {
@@ -50,14 +49,6 @@
     }
 
     & .is-decorate {
-      & .pattern-title {
-        bottom: auto;
-
-        & h1 {
-          text-align: inherit;
-        }
-      }
-
       & .post-meta {
         & .meta-container {
           justify-content: center;
