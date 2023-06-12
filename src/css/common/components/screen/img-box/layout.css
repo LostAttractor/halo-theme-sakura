@@ -1,6 +1,6 @@
 .centerbg {
   width: 100%;
-  height: var(--first-screen-height);
+  height: 100vh;
   margin: 0;
   padding: 0;
 

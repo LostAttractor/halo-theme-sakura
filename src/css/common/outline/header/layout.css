@@ -36,8 +36,6 @@
     position: fixed;
     padding: 0 20px;
     box-sizing: border-box;
-    top: 0;
-    transition: top 0.3s ease-in-out;
   }
 
   @mixin screens-md {
@@ -57,15 +55,9 @@
 .yya {
   & .header-inner {
     position: fixed;
-    top: var(--yya-header-top);
+    top: 0;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 1px 40px -8px #00000080;
-  }
-
-  &.sabit {
-    & .header-inner {
-      top: 0;
-    }
   }
 
   @mixin screens-md {

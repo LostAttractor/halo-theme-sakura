@@ -32,7 +32,6 @@
     text-shadow: none;
     border-radius: 0 0 5px 5px;
     width: 100%;
-    cursor: var(--cursor-text);
 
     &::-webkit-scrollbar {
       height: 10x;
