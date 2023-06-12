@@ -33,7 +33,7 @@
   }
 }
 
-@define-mixin dark {
+@define-mixin screens-2xl {
   @media (prefers-color-scheme: dark) {
     @mixin-content;
   }
