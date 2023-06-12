@@ -1,6 +1,5 @@
 .moments-container {
   margin: 20px 0;
-  filter: brightness(var(--theme-brightness));
 
   & .moments-inner {
     padding: 0;

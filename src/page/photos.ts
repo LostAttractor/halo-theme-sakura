@@ -21,7 +21,6 @@ export default class Photos {
       return;
     }
     const galleryElement = masonryContainerElement.querySelector(".gallery");
-    // @ts-ignore
     import("isotope-layout").then((module) => {
       const galleryLayout = new module.default(galleryElement, {
         layoutMode: "masonry",

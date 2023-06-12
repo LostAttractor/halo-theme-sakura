@@ -1,7 +1,5 @@
 import { documentFunction } from "../main";
-// @ts-ignore
 import cloneDeep from "lodash.clonedeep";
-// @ts-ignore
 import cloud from "d3-cloud";
 import { Util } from "../utils/util";
 declare const wordClouds: object[];
@@ -23,7 +21,6 @@ export default class Tags {
     if (!wordCloudElement) {
       return;
     }
-    // @ts-ignore
     const d3 = await import("d3");
     const cloneWords = cloneDeep(wordClouds);
     var layout = cloud()
