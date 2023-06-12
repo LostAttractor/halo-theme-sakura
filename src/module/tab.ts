@@ -1,8 +1,8 @@
-import { documentFunction } from "../main";
+import { sakura, documentFunction } from "../main";
 
 export class Tab {
   @documentFunction()
   public registerTabsTag() {
-    console.log("registerTabsTag");
+    console.log(sakura);
   }
 }
