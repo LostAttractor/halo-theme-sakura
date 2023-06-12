@@ -1235,10 +1235,10 @@ var home = location.href,
       $("#show-nav").on("click", function () {
         if ($("#show-nav").hasClass("showNav")) {
           $("#show-nav").removeClass("showNav").addClass("hideNav");
-          $(".header-inner .lower nav").addClass("navbar");
+          $(".site-top .lower nav").addClass("navbar");
         } else {
           $("#show-nav").removeClass("hideNav").addClass("showNav");
-          $(".header-inner .lower nav").removeClass("navbar");
+          $(".site-top .lower nav").removeClass("navbar");
         }
       });
 

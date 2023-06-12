@@ -54,7 +54,7 @@ Tags: LIlGG
 }
 
 .searchbox,
-.header-inner .lower,
+.site-top .lower,
 .header-user-avatar {
 	-webkit-animation: searchbox 1s;
 	animation: searchbox 1s;
@@ -731,7 +731,7 @@ a:active {
 /*--------------------------------------------------------------
 ## body
 --------------------------------------------------------------*/
-.header-inner {
+.site-top {
 	width: 100%;
 	display: block;
 	margin: 0 auto;
@@ -1091,55 +1091,52 @@ header.post-header {
 	}
 }
 
-/* 菜单 */
 .site-header {
+	width: 100%;
+	height: 75px;
+  top: 0;
+  z-index: 9999;
   position: relative;
-  right: 0;
-  width: 100%;
-  z-index: 999!important;
 }
 
-.header-inner {
-  transition: all 1s;
+.site-header:hover {
+  display: block;
+	background-color: #fff
 }
 
-.site-header .header-inner {
-  height: 75px;
-  width: 100%;
-}
-
-section:not(.is-homepage) .site-header .header-inner {
-  box-shadow: 0 1px 40px -8px #00000080;
-}
-
-.yya .header-inner {
-  position: fixed;
-  top: 0;
-  background: rgba(255,255,255,.95);
-  box-shadow: 0 1px 40px -8px #00000080;
-}
-
-/* 首页 */
-.is-homepage .site-header {
+.site-header.is-homepage {
   position: fixed;
 }
 
-.is-homepage .site-header:hover .header-inner {
-  position: fixed;
-  top: 0;
-  background: rgba(255,255,255,.95);
+.site-header.is-homepage .lower-cantiner {
+	display: none
 }
 
-.is-homepage .site-header .header-inner .lower-cantiner {
-  display: none;
-}
-
-.is-homepage .site-header:hover .header-inner .lower-cantiner {
+.site-header.is-homepage.yya .lower-cantiner {
 	display: block
 }
 
-.is-homepage .site-header.yya .header-inner .lower-cantiner {
+.site-header:hover.is-homepage .lower-cantiner {
+	display: block
+}
+
+.yya {
+	position: fixed;
+	left: 0;
   display: block;
+	background: rgba(255, 255, 255, .95);
+	box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5)
+}
+
+.gizle {
+	top: 0;
+	z-index: 9999
+}
+
+
+.sabit {
+	top: 0;
+	z-index: 9999
 }
 
 .site-branding {
@@ -1192,7 +1189,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	display: none
 }
 
-.header-inner .lower-cantiner {
+.site-top .lower-cantiner {
 	position: absolute;
 	text-align: center;
 	left: -2%;
@@ -1201,7 +1198,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	width: 100%;
 }
 
-.header-inner .lower {
+.site-top .lower {
 	display: inline-block;
 	margin: 15px 0 0 10px;
 	font-size: 16px;
@@ -1210,22 +1207,22 @@ section:not(.is-homepage) .site-header .header-inner {
 }
 
 @media (max-width:1200px) {
-	.header-inner .lower {
+	.site-top .lower {
 		left: 15px
 	}
 
-	.header-inner .lower nav.hide {
+	.site-top .lower nav.hide {
 		display: none !important
 	}
 }
 
 @media (max-width:860px) {
-	.header-inner .lower nav ul li .animated-hover i {
+	.site-top .lower nav ul li .animated-hover i {
 		display: inline
 	}
 }
 
-.header-inner .lower nav {
+.site-top .lower nav {
 	position: relative;
 	float: right;
 	display: none;
@@ -1233,7 +1230,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	animation: searchbox .2s
 }
 
-.header-inner .lower nav.navbar {
+.site-top .lower nav.navbar {
 	display: block
 }
 
@@ -1241,14 +1238,14 @@ section:not(.is-homepage) .site-header .header-inner {
 	display: none
 }
 
-.header-inner ul {
+.site-top ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: block
 }
 
-.header-inner ul li {
+.site-top ul li {
 	float: left;
 	margin: 0 13px;
 	position: relative;
@@ -1256,7 +1253,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	-webkit-transition: all 1s ease
 }
 
-.header-inner ul li a {
+.site-top ul li a {
 	padding: 10px 0;
 	display: inline-block;
 	color: #666;
@@ -1264,11 +1261,11 @@ section:not(.is-homepage) .site-header .header-inner {
     white-space: nowrap;
 }
 
-.header-inner ul li a:hover {
+.site-top ul li a:hover {
 	color: orange
 }
 
-.header-inner ul li a:after {
+.site-top ul li a:after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -1280,7 +1277,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	transition: max-width .25s ease-in-out
 }
 
-.header-inner ul li ul li a:after {
+.site-top ul li ul li a:after {
 	content: "";
 	display: none;
 	position: absolute;
@@ -1292,7 +1289,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	transition: max-width .25s ease-in-out
 }
 
-.header-inner ul li a:hover:after {
+.site-top ul li a:hover:after {
 	max-width: 100%
 }
 
@@ -1407,7 +1404,7 @@ section:not(.is-homepage) .site-header .header-inner {
 	margin: 0
 }
 
-.header-inner .menu-item-has-children li a {
+.site-top .menu-item-has-children li a {
 	font-size: 14px;
 	padding: 8px 18px;
 	text-transform: none;
@@ -9268,7 +9265,7 @@ body.dark .ex-new-account a {
 	color: #bebebe;
 }
 
-body.dark .header-inner ul li a,
+body.dark .site-top ul li a,
 body.dark .header-user-menu a,
 body.dark #mo-nav ul li a,
 body.dark .site-title a,
@@ -9413,7 +9410,7 @@ body.dark #show-nav .line {
 }
 
 @media (max-width: 1200px) {
-	body.dark .header-inner .lower nav.navbar ul {
+	body.dark .site-top .lower nav.navbar ul {
 		background: rgba(255, 255, 255, 0);
 	}
 }
