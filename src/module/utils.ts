@@ -105,7 +105,6 @@ export class Utils {
     });
   }
 
-  
   /**
    * 注册 Toc (目录)
    */
@@ -113,8 +112,7 @@ export class Utils {
   public registerToc() {
     const tocContainerElements = document.querySelectorAll(".toc-container");
     const headerOffset = 75;
-    tocContainerElements?.forEach((tocContainerElement) => {
-      console.log("tocbot")
+    tocContainerElements.forEach((tocContainerElement) => {
       import("tocbot").then((tocbot) => {
         const tocElement = tocContainerElement.querySelector(".toc");
         const offset = tocContainerElement.getBoundingClientRect().top + window.pageYOffset;
@@ -127,6 +125,8 @@ export class Utils {
           contentSelector: [".entry-content", ".links"],
           headingSelector: "h1, h2, h3, h4, h5",
           collapseDepth: collapseDepth,
+          positionFixedSelector: ".toc-container",
+          positionFixedClass: "toc-container-fixed",
           scrollSmooth: true,
           headingsOffset: -(offset - headerOffset),
           scrollSmoothOffset: -headerOffset,
