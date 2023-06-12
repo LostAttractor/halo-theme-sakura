@@ -36,7 +36,7 @@ export default class Photos {
         });
       });
 
-      galleryLayout.once("layoutComplete", function () {
+      galleryLayout.once("arrangeComplete", function () {
         masonryContainerElement.querySelector(".photos-content")?.classList.remove("loading");
       });
 
