@@ -9064,19 +9064,19 @@ ul.journals-line {
 	top: 4px;
 }
 
-.moment-footer {
+.journal-time {
 	margin-top: 10px;
 	border-top: 1px dashed #fff;
 	padding-top: 5px;
 	font-size: 12px;
 }
 
-.moment-footer > .moment-like {
+.journal-time > .journal-like {
 	cursor: pointer;
 }
 
-.moment-footer > .moment-like:hover,
-.moment-footer > .moment-like.on {
+.journal-time > .journal-like:hover,
+.journal-time > .journal-like.on {
 	color: #00a1d6;
 }
 

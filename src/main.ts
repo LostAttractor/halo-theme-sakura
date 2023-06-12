@@ -1,4 +1,4 @@
-import { Util } from "./utils/util";
+import { jsonToMap } from "./utils/util";
 import "./module/index";
 import "@/css/main.css";
 import "@purge-icons/generated";
@@ -51,8 +51,6 @@ class ThemeConfigImpl implements ThemeConfig {
 interface DocumentFunction {
   isRefresh: Boolean;
 
-  target: any;
-
   name: String;
 
   method: Function;
@@ -63,16 +61,13 @@ interface DocumentFunction {
 class SakuraDocumentFunctionImpl implements DocumentFunction {
   isRefresh: Boolean;
 
-  target: any;
-
   name: String;
 
   method: Function;
 
   execCount: Number = 0;
 
-  constructor(target: any, name: String, method: Function, isRefresh: Boolean) {
-    this.target = target;
+  constructor(name: String, method: Function, isRefresh: Boolean) {
     this.name = name;
     this.method = method;
     this.isRefresh = isRefresh;
@@ -84,7 +79,7 @@ class SakuraDocumentFunctionImpl implements DocumentFunction {
         return;
       }
     }
-    this.method.call(this.target);
+    this.method();
     this.execCount = this.execCount.valueOf() + 1;
   }
 }
@@ -220,13 +215,12 @@ export class SakuraApp implements Sakura {
     let initFuncitons = getInitDocumentFunctions();
     for (const documentFunction of initFuncitons) {
       const personObj = documentFunction as {
-        target: any;
         propertyKey: string;
         method: Function;
         isRefresh: Boolean;
       };
       this.documentFunctionFactory.registerDocumentFunction(
-        new SakuraDocumentFunctionImpl(personObj.target, personObj.propertyKey, personObj.method, personObj.isRefresh)
+        new SakuraDocumentFunctionImpl(personObj.propertyKey, personObj.method, personObj.isRefresh)
       );
     }
     initFuncitons.clear();
@@ -253,7 +247,7 @@ export class SakuraApp implements Sakura {
 
   protected refreshMetadata() {
     try {
-      this.currPageData = Util.jsonToMap<string, any>(pageData);
+      this.currPageData = jsonToMap<string, any>(pageData);
     } catch (error) {
       console.error("解析 pageData 失败：", error);
     }
@@ -312,7 +306,6 @@ export function documentFunction(isRefresh: Boolean = true) {
         functions = new Set();
       }
       const jsonObj: object = {
-        target: target,
         propertyKey: propertyKey,
         method: descriptor.value,
         isRefresh: isRefresh,
@@ -320,6 +313,6 @@ export function documentFunction(isRefresh: Boolean = true) {
       functions.add(jsonObj);
       return;
     }
-    sakura.registerDocumentFunction(new SakuraDocumentFunctionImpl(target, propertyKey, descriptor.value, isRefresh));
+    sakura.registerDocumentFunction(new SakuraDocumentFunctionImpl(propertyKey, descriptor.value, isRefresh));
   };
 }
