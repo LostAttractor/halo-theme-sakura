@@ -1,9 +1,9 @@
 .tag-wordcloud-container {
+  width: 100vw;
   position: relative;
   left: calc((100% - 100vw) / 2);
 
-  & .wordcloud {
-    width: 100vw;
+  & .jqcloud {
     height: 300px;
   }
 }
