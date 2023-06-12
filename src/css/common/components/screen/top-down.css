@@ -1,12 +1,12 @@
 .headertop-down {
   position: absolute;
-  bottom: 3.125rem;
+  bottom: 50px;
   left: 50%;
   cursor: pointer;
   z-index: 3;
 
   & .iconify {
-    font-size: 1.75rem;
+    font-size: 28px;
     color: #fff;
     transform: scale(1.5, 1);
   }

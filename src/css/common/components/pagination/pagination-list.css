@@ -1,15 +1,19 @@
 .list-pagination {
   width: 100%;
+  padding: 20px 0;
   text-align: center;
+  margin: 40px 0 80px;
   display: inline-block;
-  margin: 5rem 0;
+
+  &.pagination-archive {
+    margin: 80px 0;
+  }
 
   & a {
-    padding: 1rem 2.5rem;
+    padding: 13px 35px;
     border: 1px solid #ccc;
-    border-radius: 3rem;
+    border-radius: 50px;
     color: #b0b0b0;
-    display: inline-block;
 
     &:hover {
       border: 1px solid var(--theme-color);
@@ -20,23 +24,29 @@
 
   & span {
     color: #999;
-    font-size: 1rem;
+    font-size: 15px;
   }
 }
 
 .list-navigator {
   text-align: center;
-  margin: 5rem 0;
+  margin: 80px 0;
   display: block;
 
   & a {
     display: inline-block;
-    height: 3rem;
-    width: 3rem;
-    padding: 0.625rem;
+    height: 39px;
+    line-height: 39px;
+    margin: 20px 0;
+  }
+
+  & .iconify {
+    font-size: 15px;
+    color: #ccc;
+    padding: 10px;
     border: 2px solid #ddd;
     border-radius: 50%;
-    box-sizing: border-box;
+    margin: 0 10px;
 
     &:hover {
       color: #fff;
@@ -44,11 +54,6 @@
       border: 2px solid var(--theme-color);
       transition: all 0.2s ease-in-out;
     }
-  }
-
-  & .iconify {
-    font-size: 1rem;
-    color: #ccc;
   }
 
   @mixin screens-md {

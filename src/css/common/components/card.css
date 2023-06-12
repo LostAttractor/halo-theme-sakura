@@ -10,12 +10,12 @@
 
   & .chip-container {
     & .card-content {
-      padding: 1.5rem;
+      padding: 24px;
       border-radius: 0 0 2px 2px;
 
       & .chip {
-        margin: 0.625rem;
-        padding: 1.25rem;
+        margin: 10px 10px;
+        padding: 19px 14px;
         display: inline-flex;
         line-height: 0;
         font-size: 1rem;

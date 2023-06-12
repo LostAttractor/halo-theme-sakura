@@ -1,11 +1,11 @@
 a.copy-code {
   color: #fff;
   position: absolute;
-  right: 0.625em;
+  right: 10px;
   display: inline-table;
-  top: 0.375em;
-  padding-right: 0.125em;
-  font-size: 1rem;
+  top: 5px;
+  padding-right: 2px;
+  font-size: 16px;
   z-index: 1;
 
   &:hover {

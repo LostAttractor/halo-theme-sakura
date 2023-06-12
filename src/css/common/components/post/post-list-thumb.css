@@ -1,9 +1,9 @@
 .post-list-thumb {
   display: flex;
   width: 100%;
-  height: 18.75rem;
+  height: 300px;
   position: relative;
-  margin: 1.25rem 0 1.25rem;
+  margin: 20px 0 20px;
   border-radius: 10px;
   background-color: var(--background-color);
   box-shadow: var(--post-list-thumb-box-shadow);
@@ -21,7 +21,7 @@
     min-width: 55%;
 
     & a {
-      height: 18.75rem;
+      height: 300px;
       position: relative;
       display: block;
       background-repeat: no-repeat;
@@ -45,12 +45,12 @@
     display: inline-block;
     padding-left: 0;
     width: 100%;
-    padding: 0 1.875rem;
-    margin-top: 1.25rem;
+    padding: 0 30px;
+    margin-top: 20px;
 
     & .post-date {
       color: #888;
-      font-size: 0.75rem;
+      font-size: 12px;
       transition: background 1s;
     }
 
@@ -58,11 +58,11 @@
       &,
       & a {
         color: #888;
-        font-size: 0.75rem;
+        font-size: 12px;
       }
 
       & .comments-number {
-        margin: 0 0.625rem;
+        margin: 0 10px;
       }
     }
 
@@ -78,11 +78,11 @@
       & .post-text {
         display: inline-block;
         text-align: justify;
-        font-size: 0.875rem;
+        font-size: 14px;
       }
 
       & .iconify {
-        font-size: 1.875rem;
+        font-size: 30px;
         color: var(--post-list-thumb-more-color);
         margin-right: 5px;
 
@@ -95,7 +95,7 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
-        height: 4.375rem;
+        height: 70px;
         overflow: hidden;
         text-align: left;
       }
@@ -140,7 +140,8 @@
     height: auto;
     padding: 0;
     border: 0;
-    margin-bottom: 1.25rem;
+    box-shadow: 0 5px 10px 5px rgba(110, 110, 110, 0.4);
+    margin-bottom: 20px;
 
     &,
     &.post-list-thumb-right {
@@ -156,7 +157,7 @@
       left: 0;
       right: 0;
       margin: auto;
-      bottom: -6.375rem;
+      bottom: -101px;
       z-index: 0;
     }
 
@@ -174,7 +175,7 @@
       left: 0;
       text-align: left;
       margin: 0;
-      padding: 1.25rem;
+      padding: 20px;
       float: none;
       box-shadow: none;
       box-sizing: border-box;
@@ -221,14 +222,14 @@
   @mixin screens-sm {
     & .post-thumb {
       & a {
-        height: 13.125rem;
+        height: 210px;
       }
     }
 
     & .post-content-wrap {
       & .float-content {
         & .post-text {
-          font-size: 0.8125rem;
+          font-size: 13px;
           margin-bottom: 1em;
         }
       }

@@ -1,6 +1,6 @@
 ::-webkit-scrollbar {
-  width: 0.375rem;
-  height: 0.375rem;
+  width: 6px;
+  height: 6px;
   background-color: #eee;
 }
 

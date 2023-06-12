@@ -1,5 +1,5 @@
 .entry-content {
-  margin-top: 1.25rem;
+  margin-top: 20px;
   position: relative;
 
   &::before,
@@ -29,12 +29,12 @@
       color: #ff6d6d;
       font-family: serif;
       padding-left: 6px;
-      font-size: 1em;
+      font-size: 1.03em;
     }
   }
 
   & h3 {
-    padding-bottom: 0.5em;
+    padding-bottom: 8px;
     border-bottom: 1px dashed #ddd;
     color: #7d7d7d;
 
@@ -58,7 +58,7 @@
   & h3,
   & h4,
   & h5 {
-    padding-left: 1em;
+    padding-left: 16px;
 
     &::after {
       left: 0;
@@ -114,12 +114,12 @@
 
   & p {
     color: var(--entry-content-text-color);
-    line-height: 1.875em;
+    line-height: 30px;
   }
 
   & hr {
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 40px;
     display: block;
     border: 0;
     text-align: center;
@@ -131,8 +131,8 @@
       margin-left: 0.6em;
       color: rgba(0, 0, 0, 0.8);
       position: relative;
-      top: -1.875em;
-      font-size: 1.75em;
+      top: -30px;
+      font-size: 28px;
       letter-spacing: 0.6em;
     }
   }
@@ -151,7 +151,7 @@
   & ul {
     list-style: disc;
     border: 1px dashed #ddd;
-    padding: 1em 0.625em 1em 3.125em;
+    padding: 15px 10px 15px 50px;
     color: var(--entry-content-list-color);
     margin-left: 0;
     border-radius: 10px;
@@ -222,10 +222,10 @@
 
       & td,
       & th {
-        padding: 0.5em 1em;
+        padding: 8px 16px;
         border: 1px solid #ddd;
         line-height: 1.5;
-        font-size: 0.9em;
+        font-size: 90%;
       }
 
       & tbody {
@@ -242,7 +242,7 @@
 
   @mixin screens-md {
     & p {
-      font-size: 0.875em;
+      font-size: 14px;
     }
 
     & .begin {

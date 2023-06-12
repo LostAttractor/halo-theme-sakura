@@ -1,7 +1,7 @@
 .site-header {
   position: relative;
   right: 0;
-  height: var(--header-height);
+  height: 75px;
   width: 100%;
   z-index: 10;
 
@@ -17,9 +17,10 @@
   }
 
   &.iconsearch {
+    font-size: 18px;
     font-size: 1.125rem;
     position: relative;
-    z-index: 10;
+    z-index: 9998;
 
     &:hover {
       cursor: pointer;
@@ -28,12 +29,12 @@
   }
 
   & .header-inner {
-    height: var(--header-height);
+    height: 75px;
     width: 100%;
     display: block;
     margin: 0 auto;
     position: fixed;
-    padding: 0 1.25rem;
+    padding: 0 20px;
     box-sizing: border-box;
     top: 0;
     transition: top 0.3s ease-in-out;
@@ -42,7 +43,7 @@
   @mixin screens-md {
     &,
     & .header-inner {
-      height: 2.5rem;
+      height: 40px;
       position: absolute;
     }
 
