@@ -8,7 +8,7 @@
     margin: 0;
 
     & a {
-      color: var(--body-color);
+      color: #464646;
       font-weight: 400;
 
       &:hover {

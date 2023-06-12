@@ -141,8 +141,6 @@ export class Utils {
             colorScheme: 'light'
           }
         );
-        // 注入样式
-        this.injectCommentStyle();
         resolve("success");
       });
     }
