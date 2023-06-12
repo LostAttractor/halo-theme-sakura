@@ -6,14 +6,12 @@
   box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
   border-radius: 5px;
   margin: 10px 0;
-  display: flex;
-  align-items: center;
 
   & a {
     padding: 5px;
   }
 
-  & .content-toast {
+  & .content_toast {
     display: block;
     padding: 8px 8px 8px 16px;
     height: 20px;
@@ -21,13 +19,13 @@
     white-space: nowrap;
     overflow: hidden;
     width: 95%;
-    transition: width, padding 0.5s ease;
-  }
-
-  & i {
-    line-height: inherit;
-    cursor: pointer;
-    padding-right: 5px;
+    transition: all 0.5s ease;
+  
+    & i {
+      float: right;
+      line-height: inherit;
+      cursor: pointer;
+    }
   }
 
   &:hover {
@@ -36,15 +34,16 @@
   }
 
   &.hide {
-    margin: 0;
-    
-    & .content-toast {
+    & .content_toast {
+      opacity: 0;
       height: 0;
       padding: 0;
     }
+  }
 
+  @mixin screens-md {
     & i {
-      display: none;
+      padding-right: 0;
     }
   }
 }

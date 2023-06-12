@@ -933,20 +933,20 @@ var LIlGGAttachContext = {
       }
     }
 
-    var minicode = contentDom.getElementsByClassName("minicode");
-    Array.prototype.forEach.call(minicode, (content) => {
+    var contentToast = contentDom.getElementsByClassName("content_toast");
+    Array.prototype.forEach.call(contentToast, (content) => {
       var i = content.getElementsByTagName("i")[0];
       i.onclick = function () {
-        content.classList.toggle("hide");
+        content.parentElement.classList.toggle("hide");
       };
     });
 
     function buildToastDiv(type, color, msg) {
       return `<div class="${type} minicode" style="background-color: ${color}">
-                <span class="content-toast">
+                <span class="content_toast">
                   ${msg}
+                  <i class="fa fa-times" aria-hidden="true"></i>
                 </span>
-                <i class="fa fa-times" aria-hidden="true"></i>
               </div>`;
     }
 

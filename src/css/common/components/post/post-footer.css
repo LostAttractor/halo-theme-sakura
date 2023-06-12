@@ -92,11 +92,7 @@
   }
 
   @mixin screens-md {
-    & p {
-      font-size: 14px;
-    }
-
-    & .post-footer-meta {
+    & {
       display: none;
     }
   }

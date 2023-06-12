@@ -8,6 +8,7 @@
     padding-bottom: 5px;
     margin-bottom: 30px;
     border-bottom: 1px dashed #ececec;
+    transition: color 1s;
     transition: border 1s;
   }
 
