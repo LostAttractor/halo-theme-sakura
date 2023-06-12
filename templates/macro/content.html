@@ -68,14 +68,14 @@
         <span>
           <span class="iconify" data-icon="solar:chat-line-line-duotone"></span>
           <a th:href="@{${post.status.permalink}+'#comments'}">
-            <span data-i18n="postlist.comments" th:i18n-options="|{comment: '${post.stats.comment}'}|"> </span>
+            <span class="i18n" data-iname="postlist.comments" th:attr="data-ivalue=${post.stats.comment}"> </span>
           </a>
         </span>
       </div>
       <div class="views">
         <span>
           <span class="iconify" data-icon="solar:eye-linear"></span>
-          <span data-i18n="postlist.heat" th:i18n-options="|{visit: '${post.stats.visit}'}|"> </span>
+          <span class="i18n" data-iname="postlist.heat" th:attr="data-ivalue=${post.stats.visit}"> </span>
         </span>
       </div>
     </div>
@@ -83,9 +83,10 @@
       <span th:if="${post.spec.pinned}" class="iconify hotpost" data-icon="solar:fire-outline"></span>
       <span class="iconify" data-icon="solar:clock-circle-linear"></span>
       <time
-        data-i18n="postlist.time"
-        th:i18n-options="|{'time': '${post.spec.publishTime}', 'params': { 'separator': '-', 'options': { 'year': 'numeric', 'month': '2-digit', 'day': '2-digit' } } }|"
+        class="i18n"
+        data-iname="postlist.time"
         th:datetime="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
+        th:attr="data-ivalue=${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
         itemprop="dateCreated datePublished"
       >
       </time>

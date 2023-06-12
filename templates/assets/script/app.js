@@ -17,6 +17,8 @@ var LIlGGAttachContext = {
     } catch (e) {}
 
     LIlGGAttachContext.SS(); // 日志功能
+    // i18n
+    I18N.init();
   },
 
   // 日志
@@ -42,6 +44,17 @@ var LIlGGAttachContext = {
         }
       });
     }
+  },
+  /**
+   * 发送 Email
+   */
+  TOMAIL: function () {
+    if (!Poi.meEmail) {
+      return;
+    }
+
+    var mail = "mailto:" + Poi.meEmail;
+    window.open(mail);
   },
 };
 
@@ -180,6 +193,7 @@ $(function () {
   LIlGGAttachContext.SS(); // 日志功能
   // PJAX
   Poi.pjax && pjaxFun();
+  I18N.init();
 });
 
 function imgError() {
