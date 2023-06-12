@@ -28,8 +28,4 @@
       }
     }
   }
-
-  @mixin screens-md {
-    margin-top: 0;
-  }
 }
