@@ -3,7 +3,6 @@ import "./module/index";
 import "./css/main.css";
 import "@purge-icons/generated";
 import Toast from "./utils/toast";
-import i18next from "i18next";
 
 /* 核心启动，通常不建议也不应当由用户调用，只能由启动代码使用  */
 interface Sakura {
@@ -337,7 +336,6 @@ declare const pageData: any;
 export var sakura: Sakura = new SakuraApp(config);
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log(i18next.t("name"));
   sakura.refresh();
 });
 
