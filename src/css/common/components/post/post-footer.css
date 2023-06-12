@@ -126,7 +126,7 @@
     margin-right: 5px;
 
     &:hover {
-      color: var(--theme-color);
+      color: orange;
     }
   }
 

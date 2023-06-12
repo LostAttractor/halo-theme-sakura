@@ -72,7 +72,7 @@
     position: relative;
 
     &:hover {
-      color: var(--theme-color);
+      color: orange;
       text-decoration: none;
 
       &::after {
@@ -89,7 +89,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--theme-color);
+      background-color: orange;
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }

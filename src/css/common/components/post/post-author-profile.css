@@ -20,9 +20,11 @@
     border-bottom: 1px solid #efefef;
   }
 
-  & .iconify {
-    color: var(--theme-color);
+  & i {
+    color: #65c186;
+    float: none;
     margin-right: 10px;
+    font-size: 16px;
   }
 
   & .info {

@@ -3,6 +3,20 @@
   position: relative;
   animation: main 0.6s;
 
+  & h1 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+    margin: 0 0 0 17%;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 64%;
+  }
+
   & p {
     min-height: 60px;
     margin: 0 0 0 17%;
@@ -60,7 +74,6 @@
       & .iconify {
         font-size: 30px;
         background: transparent;
-        color: var(--theme-color);
       }
     }
 
@@ -75,26 +88,6 @@
     }
   }
 
-  & .entry-title {
-    &h1 {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 50px;
-      margin: 0 0 0 17%;
-      position: relative;
-      z-index: 1;
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 64%;
-
-      &:hover {
-        color: var(--theme-color);
-      }
-    }
-  }
-
   & .entry-footer {
     & .post-more {
       margin-top: 10px;
@@ -105,7 +98,7 @@
         color: #666;
 
         &:hover {
-          color: var(--theme-color);
+          color: #000;
         }
       }
     }
@@ -157,6 +150,12 @@
   }
 
   @mixin screens-md {
+    & h1 {
+      margin: 0 0 0 65px;
+      font-size: 16px;
+      line-height: 30px;
+    }
+
     & p {
       margin: 20px 0 0 65px;
       font-size: 14px;
@@ -172,14 +171,6 @@
 
       & .overlay {
         display: none;
-      }
-    }
-
-    & .entry-title {
-      &h1 {
-        margin: 0 0 0 65px;
-        font-size: 16px;
-        line-height: 30px;
       }
     }
 

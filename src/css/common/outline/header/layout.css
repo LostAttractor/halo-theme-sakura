@@ -24,7 +24,7 @@
 
     &:hover {
       cursor: pointer;
-      color: var(--theme-color);
+      color: #999;
     }
   }
 

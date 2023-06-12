@@ -16,6 +16,7 @@
     & nav {
       position: relative;
       float: right;
+      display: none;
       animation: fadeInRight 0.2s;
 
       & ul {
@@ -29,6 +30,7 @@
           margin: 0 13px;
           position: relative;
           transition: all 1s ease;
+          -webkit-transition: all 1s ease;
 
           &:hover {
             & ul {
@@ -84,7 +86,7 @@
             white-space: nowrap;
 
             &:hover {
-              color: var(--theme-color);
+              color: orange;
             }
 
             &::after {
@@ -93,7 +95,7 @@
               position: absolute;
               bottom: -16px;
               height: 6px;
-              background-color: var(--theme-color);
+              background-color: #fe9600;
               width: 100%;
               max-width: 0;
               transition: max-width 0.25s ease-in-out;
