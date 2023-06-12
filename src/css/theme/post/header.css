@@ -23,7 +23,7 @@
     & .pattern-title {
       bottom: 60px;
 
-      & h1 {
+      & .entry-title {
         text-align: inherit;
       }
     }
@@ -50,13 +50,19 @@
     top: 45%;
 
     & h1 {
-      font-size: 26px;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      text-align: center;
+      &.cat-title,
+      &.entry-title {
+        font-size: 26px;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+
+      &.entry-title {
+        text-align: center;
+      }
     }
   }
 }
