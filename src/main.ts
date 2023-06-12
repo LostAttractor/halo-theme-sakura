@@ -437,7 +437,9 @@ declare const pageData: any;
 
 export var sakura: Sakura = new SakuraApp(config);
 
-sakura.refresh();
+document.addEventListener("DOMContentLoaded", () => {
+  sakura.refresh();
+});
 
 var functions: Set<object>;
 
