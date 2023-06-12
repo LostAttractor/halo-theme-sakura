@@ -8,10 +8,15 @@ export class Utils {
    */
   @documentFunction(false)
   public loadHeaderAnimationCss() {
-    const menuItemSvgElements = document.querySelectorAll(".menu-item .animation") as NodeListOf<HTMLElement>;
-    if (menuItemSvgElements && menuItemSvgElements.length > 0) {
-      import("font-awesome-animation/css/font-awesome-animation.min.css");
+    const menuItemElements = document.querySelectorAll(".menu-item") as NodeListOf<HTMLElement>;
+    if (!menuItemElements || menuItemElements.length === 0) {
+      return;
     }
+    menuItemElements.forEach((menuItemElement) => {
+      if (menuItemElement.classList.contains("animation")) {
+        import("font-awesome-animation/css/font-awesome-animation.min.css");
+      }
+    });
   }
 
   /**
