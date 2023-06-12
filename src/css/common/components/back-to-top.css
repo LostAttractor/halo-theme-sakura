@@ -41,7 +41,7 @@
   }
 }
 
-/* TODO: 移动端，外边框会消失不见 */
+/* 移动端 */
 .m-cd-top {
   display: none;
   opacity: 0;
@@ -62,7 +62,6 @@
   transition: all 0.5s ease;
 
   &.cd-is-visible {
-    display: block;
     opacity: 1;
   }
 
