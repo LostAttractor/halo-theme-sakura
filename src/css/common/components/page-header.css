@@ -89,6 +89,11 @@
         content: "}";
       }
     }
+
+    & .cat-des {
+      font-size: 16px;
+      display: block;
+    }
   }
 }
 
