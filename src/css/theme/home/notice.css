@@ -3,15 +3,15 @@
   border: 1px dashed #e6e6e6;
   color: var(--color);
   position: relative;
-  display: block;
+  display: inline-block;
+  width: 100%;
   background: var(--notice-background-color);
   border-radius: 10px;
   animation: main 0.6s;
 
   & .notice-content {
-    display: contents;
+    display: initial;
     vertical-align: middle;
-    width: 100%;
   }
 
   & .iconify {
