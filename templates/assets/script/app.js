@@ -269,12 +269,9 @@ var LIlGGAttachContext = {
     if (document.body.clientWidth <= 1200) {
       return;
     }
-    let $content = $(".entry-content");
-    if ($content.length <= 0) {
-      return;
-    }
-    let entryContentOffset = $content.offset().top;
+    let entryContentOffset = $(".entry-content").offset().top;
     let offset = 75;
+    debugger
     $(".entry-content , .links")
       .children("h1,h2,h3,h4,h5")
       .each(function (index) {

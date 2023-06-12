@@ -37,7 +37,13 @@ body {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 
   &.serif {
-    font-family: "Noto Serif SC", Georgia, serif;
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Source Han Serif", "source-han-serif-sc", "PT Serif",
+      "SongTi SC", "MicroSoft Yahei", Georgia, serif;
+  }
+
+  &.chinese-font {
+    font-family: "Merriweather Sans", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei",
+      "WenQuanYi Micro Hei", sans-serif;
   }
 }
 
@@ -141,7 +147,7 @@ hr {
 code,
 kbd,
 samp {
-  font-family: monospace;
+  font-family: monospace, monospace;
   font-size: 1em;
 }
 
